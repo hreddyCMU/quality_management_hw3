@@ -10,7 +10,6 @@ pipeline{
         agent any
 	    tools { 
 		maven 'maven' 
-		jdk "jdk-1.8.101"
 	    } 
         environment{
 	    Docker_tag = getDockerTag()
@@ -25,7 +24,7 @@ pipeline{
       }
       stage ('test') {
         steps{
-            sh "mvn -f /var/lib/jenkins/workspace/calc/Scientific-Calculator-master/Calculator test"
+            sh 'mvn -f /var/lib/jenkins/workspace/calc/Scientific-Calculator-master/Calculator test'
         }
       }
              
