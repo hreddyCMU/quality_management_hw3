@@ -9,7 +9,8 @@ currentBuild.displayName = "Final_Demo # "+currentBuild.number
 pipeline{
         agent any
 	    tools { 
-		maven 'maven' 
+		maven 'maven'
+		jdk 'jdk'
 	    } 
         environment{
 	    Docker_tag = getDockerTag()
