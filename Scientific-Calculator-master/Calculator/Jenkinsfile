@@ -19,12 +19,12 @@ pipeline{
 
             stage ('build') {
         steps{
-            sh 'mvn -f /var/lib/jenkins/workspace/calc/Scientific-Calculator-master/Calculator/ compile'
+            sh 'mvn -f /var/lib/jenkins/workspace/calc/Scientific-Calculator-master/Calculator compile'
         }
       }
       stage ('test') {
         steps{
-            sh "mvn -f /var/lib/jenkins/workspace/calc/Scientific-Calculator-master/Calculator/ test"
+            sh "mvn -f /var/lib/jenkins/workspace/calc/Scientific-Calculator-master/Calculator test"
         }
       }
              
