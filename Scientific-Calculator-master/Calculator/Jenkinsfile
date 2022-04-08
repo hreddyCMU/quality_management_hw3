@@ -10,6 +10,7 @@ pipeline{
         agent any
 	    tools { 
 		maven 'maven' 
+		jdk "jdk-1.8.101"
 	    } 
         environment{
 	    Docker_tag = getDockerTag()
