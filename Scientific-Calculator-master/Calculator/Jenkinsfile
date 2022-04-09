@@ -28,30 +28,10 @@ pipeline{
             sh 'mvn -f /var/lib/jenkins/workspace/calc/Scientific-Calculator-master/Calculator test'
         }
       }
-//       stage('SonarQube Analysis') {
-//           steps{
-// //       withSonarQubeEnv('sonar') {
-// //       sh """/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQube/bin/sonar-scanner \
-// //      -D sonar.projectVersion=1.0-SNAPSHOT \
-// //        -D sonar.login=admin \
-// //       -D sonar.password=admin \
-// //       -D sonar.projectBaseDir=/var/lib/jenkins/workspace/calc/ \
-// //         -D sonar.projectKey=spring-petclinic \
-// //         -D sonar.sourceEncoding=UTF-8 \
-// //         -D sonar.language=java \
-// //         -D sonar.sources=Scientific-Calculator-master/Calculator/src/main/java/io/michaelcane/ \
-// //         -D sonar.tests=Scientific-Calculator-master/Calculator/src/test/java/io/michaelcane/ \
-// //         -D sonar.java.binaries=. \
-// //         -D sonar.host.url=http://ec2-34-224-98-136.compute-1.amazonaws.com:9000/"""
-// //         }
-// 		  sh 'mvn -f Scientific-Calculator-master/Calculator/pom.xml -D sonar.host.url=http://ec2-34-224-98-136.compute-1.amazonaws.com:9000/  -D sonar.language=java clean package sonar:sonar'
-
-//           }
-		post {
-        always {
-            junit 'build/reports/**/*.xml'
-        }
-    }
+      stage('SonarQube Analysis') {
+          steps{
+                sh 'mvn -f Scientific-Calculator-master/Calculator/pom.xml -D sonar.host.url=http://ec2-34-224-98-136.compute-1.amazonaws.com:9000/  -D sonar.language=java clean package sonar:sonar'
+          }
 }
              
                  
@@ -59,7 +39,11 @@ pipeline{
 	
 		
     }
-	       
+	post {
+        always {
+            junit 'build/reports/**/*.xml'
+        }
+    }    
 	       
 	       
 	      
