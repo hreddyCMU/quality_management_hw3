@@ -73,7 +73,7 @@ public class CalculatorSpec {
     }
     
     @Test
-    public void test$square() {
+    public void test$cube() {
         /**
          * This method should cube a value (double) provided by the user.
          */
