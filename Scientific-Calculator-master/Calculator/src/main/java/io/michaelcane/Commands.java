@@ -41,6 +41,7 @@ public class Commands {
         SUM,
         RECALLMEMORY,
         TANGENT,
+        CUBE,
         VARIABLEEXPONENTIATION;
     }
 
@@ -91,6 +92,9 @@ public class Commands {
                 break;
             case SQUARE:
                 calculator.square(user.isNumber);
+                break;
+            case CUBE:
+                calculator.cube(user.isNumber);
                 break;
             case SQUAREROOT:
                 calculator.squareRoot(user.isNumber);
