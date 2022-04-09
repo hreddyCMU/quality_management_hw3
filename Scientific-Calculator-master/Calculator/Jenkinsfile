@@ -44,7 +44,7 @@ pipeline{
 //         -D sonar.java.binaries=. \
 //         -D sonar.host.url=http://ec2-34-224-98-136.compute-1.amazonaws.com:9000/"""
 //         }
-		  sh 'mvn clean package sonar:sonar'
+		  sh 'mvn -f Scientific-Calculator-master/Calculator/pom.xml  clean package sonar:sonar'
 
           }
 }
