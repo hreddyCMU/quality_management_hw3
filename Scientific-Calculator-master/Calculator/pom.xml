@@ -10,7 +10,6 @@
      <properties>
    <maven.compiler.source>6</maven.compiler.source>
    <maven.compiler.target>1.6</maven.compiler.target>
-         <sonar.analysis.mode>preview</sonar.analysis.mode>
          <sonar.issuesReport.html.enable>true</sonar.issuesReport.html.enable>
  </properties>
 
