@@ -28,9 +28,14 @@ pipeline{
             sh 'mvn -f /var/lib/jenkins/workspace/calc/Scientific-Calculator-master/Calculator test'
         }
       }
+		stage ('verify') {
+        steps{
+            sh 'mvn -f /var/lib/jenkins/workspace/calc/Scientific-Calculator-master/Calculator verify'
+        }
+      }
       stage('SonarQube Analysis') {
           steps{
-                sh 'mvn -f Scientific-Calculator-master/Calculator/pom.xml -D sonar.host.url=http://ec2-54-225-2-103.compute-1.amazonaws.com:9000/  -D sonar.language=java -D sonar.java.coveragePlugin=jacoco -D sonar.jacoco.reportPath=reports/jacoco/jacoco-ut.exec -D sonar.jacoco.itReportPath=reports/jacoco/jacoco-it.exec   clean package sonar:sonar'
+                sh 'mvn -f Scientific-Calculator-master/Calculator/pom.xml -D sonar.host.url=http://ec2-54-225-2-103.compute-1.amazonaws.com:9000/  -D sonar.language=java -D sonar.java.coveragePlugin=jacoco -D sonar.jacoco.reportPath=/var/lib/jenkins/workspace/calc/Scientific-Calculator-master/Calculator/target/surefire-reports  clean package sonar:sonar'
           }
 }
              
