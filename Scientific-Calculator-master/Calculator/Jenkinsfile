@@ -30,7 +30,7 @@ pipeline{
       }
       stage('SonarQube Analysis') {
           steps{
-                sh 'mvn -f Scientific-Calculator-master/Calculator/pom.xml -D sonar.host.url=http://ec2-34-224-98-136.compute-1.amazonaws.com:9000/  -D sonar.language=java   -Ds onar.analysis.mode=preview clean package sonar:sonar'
+                sh 'mvn -f Scientific-Calculator-master/Calculator/pom.xml -D sonar.host.url=http://ec2-34-224-98-136.compute-1.amazonaws.com:9000/  -D sonar.language=java   -Dsonar.analysis.mode=preview clean package sonar:sonar'
           }
 }
              
